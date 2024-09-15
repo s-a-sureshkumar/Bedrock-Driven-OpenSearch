@@ -22,6 +22,17 @@ This project demonstrates the use of AWS Bedrock (Claude) to process user prompt
    npm install
    ```
 
+## AWS Bedrock Configuration
+
+Before running the application, it's crucial to configure AWS Bedrock with access to the Claude 3 Haiku model. Follow these steps:
+
+1.  Go to the AWS Bedrock Model Access page in the us-east-1 region: [https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/modelaccess](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/modelaccess)
+2.  If you don't already have access, request model access for Anthropic -> Claude 3 Haiku.
+3.  Wait for the access request to be approved. This process may take some time.
+4.  Once access is granted, the Claude 3 Haiku model will be available for use in your application.
+
+**Important**: The application will only work once you have been granted access to the Claude 3 Haiku model. Make sure this step is completed before proceeding to run the application.
+
 ## Running the Application
 
 ### Local Development
