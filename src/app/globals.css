@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[data-amplify-authenticator] {
+    --amplify-components-tabs-item-active-color: theme('colors.orange.500');
+    --amplify-components-tabs-item-hover-color: theme('colors.orange.500');
+    --amplify-components-tabs-item-active-border-color: theme('colors.orange.500');
+    --amplify-components-tabs-item-color: theme('colors.black');
+    --amplify-components-button-link-hover-background-color: none;
+    --amplify-components-button-link-color: theme('colors.orange.600');
+    --amplify-components-button-link-hover-color: theme('colors.orange.500');
+    --amplify-components-button-primary-hover-background-color: theme('colors.orange.500');
+    --amplify-components-button-primary-background-color: theme('colors.orange.600');
+    --amplify-components-button-hover-background-color: theme('colors.orange.100');
+    --amplify-components-button-hover-border-color: theme('colors.orange.300');
+    --amplify-components-passwordfield-button-hover-background-color: theme('colors.orange.100');
+    --amplify-components-passwordfield-button-hover-border-color: theme('colors.orange.300');
+    --amplify-components-input-border-color: theme('colors.orange.300');
+    --amplify-components-fieldcontrol-border-color: theme('colors.orange.300');
+    --amplify-components-fieldcontrol-focus-border-color: theme('colors.orange.600');
+    --amplify-components-fieldcontrol-focus-box-shadow: 0 0 0 1px theme('colors.orange.600');
+    --amplify-components-button-focus-box-shadow: 0 0 0 1px theme('colors.orange.600');
+    --amplify-internal-button-focus-box-shadow: 0 0 0 1px theme('colors.orange.600');
+    --amplify-components-button-focus-border-color: theme('colors.orange.600');
+    --amplify-internal-button-border-color: theme('colors.orange.300');
+    --amplify-internal-button-color: theme('colors.orange.600');
+    --amplify-components-button-border-color: theme('colors.orange.300');
+    --amplify-components-textfield-color: theme('colors.orange.600');
+    --amplify-components-button-primary-active-background-color: theme('colors.orange.700');
+    --amplify-components-button-primary-focus-background-color: theme('colors.orange.700');
+    --amplify-colors-border-focus: theme('colors.orange.600');
+    --amplify-components-button-primary-focus-box-shadow: 0 0 0 1px theme('colors.orange.600');
+    --amplify-components-button-active-border-color: theme('colors.orange.700');
+    --amplify-internal-button-background-color: theme('colors.orange.600');
+    --amplify-components-passwordfield-button-active-background-color: theme('colors.orange.200');
+    --amplify-components-textfield-focus-border-color: theme('colors.orange.600');
+    --amplify-components-passwordfield-button-active-border-color: theme('colors.orange.300');
+    --amplify-components-authenticator-container-width-max: theme('spacing.96');
+}
+
+[data-amplify-authenticator] [data-amplify-router] {
+    --amplify-components-authenticator-router-box-shadow: 0 0 0 0 theme('colors.orange.200');
+    --amplify-components-authenticator-router-border-color: theme('colors.orange.200');
+}
