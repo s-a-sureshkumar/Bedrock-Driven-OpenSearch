@@ -52,6 +52,7 @@ export default function SeedCollection() {
         );
         return createToken({
           ...token,
+          identifier: parseInt(token.identifier),
           name: token.name ? token.name : "",
           price: Math.random() > 0.7 ? parseFloat(price.toFixed(4)) : undefined,
           traits: token.traits.sort((a, b) =>

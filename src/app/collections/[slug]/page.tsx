@@ -1,24 +1,11 @@
 "use client";
-import { Divider } from "@/components/divider";
 import { Heading, Subheading } from "@/components/heading";
 import { useGetCollection } from "@/hooks/use-get-collection";
 import { Badge } from "@/components/badge";
 import { notFound } from "next/navigation";
 import { useListTokens } from "@/hooks/use-list-tokens";
-import formatPrice from "@/util/format-price";
 import Tokens from "@/components/tokens";
-
-export function Stat({ title, value }: { title: string; value: number }) {
-  return (
-    <div>
-      <Divider />
-      <div className="mt-6 text-lg/6 font-medium sm:text-sm/6">{title}</div>
-      <div className="mt-3 text-3xl/8 font-semibold sm:text-2xl/8">
-        {formatPrice(value)}
-      </div>
-    </div>
-  );
-}
+import Stat from "@/components/stat";
 
 export default function Collections({ params }: { params: { slug: string } }) {
   const { data: collection, isPending } = useGetCollection(params.slug);

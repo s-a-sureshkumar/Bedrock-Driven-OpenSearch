@@ -10,7 +10,7 @@ export const useCreateToken = (): UseMutationResult<
   Error | null,
   {
     collection_slug: string;
-    identifier: string;
+    identifier: number;
     name: string;
     image_url: string;
     traits: { trait_type: string; value: string }[];
