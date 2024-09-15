@@ -47,6 +47,13 @@ To deploy the application to an AWS Amplify environment:
 3. Follow the prompts to connect your repository and configure your app.
 4. Amplify will automatically detect that this is an Amplify Gen 2 app and set up the necessary resources.
 
+**Important**: By default, Amplify sets the build timeout to 30 minutes, which may not be sufficient to deploy the OpenSearch instance. To avoid deployment failures, adjust the timeout setting:
+
+1. In your Amplify App, go to "Hosting" -> "Build Settings" -> "Build image settings".
+2. Set the timeout to 120 minutes (the maximum allowed).
+
+This extended timeout should provide enough time for the OpenSearch instance to deploy successfully.
+
 For detailed instructions on deploying Amplify Gen 2 apps, refer to the [Additional Resources](#additional-resources) section below.
 
 ## Accessing the Application
