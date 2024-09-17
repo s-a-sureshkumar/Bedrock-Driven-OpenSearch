@@ -62,6 +62,10 @@ const openSearchDomain = new openSearch.Domain(dataStack, "OpenSearchDomain", {
   encryptionAtRest: {
     enabled: true,
   },
+  capacity: {
+    dataNodeInstanceType: "t3.small.search",
+    dataNodes: 1,
+  },
 });
 
 const s3BucketArn = backend.storage.resources.bucket.bucketArn;
