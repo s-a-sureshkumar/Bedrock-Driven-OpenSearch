@@ -4,7 +4,7 @@ import { generateClient } from "@aws-amplify/api";
 
 export const useSearchTokens = (
   q: string,
-): UseQueryResult<Schema["Token"]["type"][]> => {
+): UseQueryResult<Schema["SearchResult"]["type"]> => {
   const client = generateClient<Schema>();
 
   return useQuery({
@@ -19,8 +19,10 @@ export const useSearchTokens = (
           .join(", ");
         throw new Error(errorMessage);
       }
-
-      return response.data;
+      return {
+        tokens: response.data?.tokens,
+        query: JSON.parse((response.data?.query as string) ?? "{}"),
+      };
     },
     queryKey: ["tokens-search", q],
     refetchOnWindowFocus: false,

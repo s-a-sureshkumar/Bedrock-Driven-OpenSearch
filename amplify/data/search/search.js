@@ -10,5 +10,8 @@ export function request(ctx) {
 }
 
 export function response(ctx) {
-  return (ctx.result?.hits?.hits ?? []).map((hit) => hit._source) ?? [];
+  return {
+    tokens: (ctx.result?.hits?.hits ?? []).map((hit) => hit._source) ?? [],
+    query: ctx.prev.result,
+  };
 }

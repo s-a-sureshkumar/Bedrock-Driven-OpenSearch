@@ -29,10 +29,24 @@ const schema = a.schema({
     .identifier(["collection_slug", "identifier"])
     .authorization((allow) => [allow.authenticated()]),
 
+  TokenResult: a.customType({
+    collection_slug: a.string().required(),
+    identifier: a.integer().required(),
+    name: a.string(),
+    image_url: a.string(),
+    traits: a.ref("Trait").array(),
+    price: a.float(),
+  }),
+
+  SearchResult: a.customType({
+    tokens: a.ref("TokenResult").array(),
+    query: a.json(),
+  }),
+
   search: a
     .query()
     .arguments({ q: a.string().required() })
-    .returns(a.ref("Token").array())
+    .returns(a.ref("SearchResult"))
     .authorization((allow) => [allow.authenticated()])
     .handler([
       a.handler.custom({

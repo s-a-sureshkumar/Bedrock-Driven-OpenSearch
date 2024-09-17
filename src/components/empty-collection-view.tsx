@@ -1,4 +1,3 @@
-// collections/EmptyCollectionView.tsx
 import React, { ReactElement } from "react";
 import { Text } from "@/components/text";
 import { Divider } from "@/components/divider";

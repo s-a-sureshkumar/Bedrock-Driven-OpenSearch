@@ -1,4 +1,3 @@
-// collections/SearchResults.tsx
 import React, { ReactElement } from "react";
 import { Text } from "@/components/text";
 import Tokens from "@/components/tokens";
@@ -8,7 +7,7 @@ export default function SearchResults({
   searchTokens,
   query,
 }: {
-  searchTokens: Schema["Token"]["type"][] | undefined;
+  searchTokens: (Schema["TokenResult"]["type"] | undefined | null)[] | null;
   query: string;
 }): ReactElement {
   if (!query) {

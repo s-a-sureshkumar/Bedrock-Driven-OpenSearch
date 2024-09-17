@@ -141,7 +141,7 @@ const indexMapping = {
         type: "text",
         fields: { keyword: { type: "keyword", ignore_above: 256 } },
       },
-      price: { type: "long" },
+      price: { type: "float" },
       traits: {
         type: "nested",
         properties: {

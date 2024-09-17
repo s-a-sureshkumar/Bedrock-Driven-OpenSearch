@@ -1,4 +1,3 @@
-// collections/GuideSection.tsx
 import React, { ReactElement } from "react";
 import { Text, TextLink } from "@/components/text";
 import { Divider } from "@/components/divider";
@@ -10,6 +9,11 @@ const EXAMPLE_PROMPTS: string[] = [
   "What are the priciest Azuki NFTs right now?",
   "Which Doodles NFTs aren't listed for sale yet?",
   "I'm looking for NFTs between 1 and 5 ETH, show me the cheapest ones first",
+  "Find only the listed Doodles with blue backgrounds and skeleton faces",
+  "What are the cheapest 3 NFTs across all collections?",
+  'Find NFTs from any collection that have "robot" in their name or traits, priced between 0.5 and 2 ETH',
+  "I like green backgrounds, so show me NFTs that match",
+  "What are the least expensive Lil Pudgy available?",
 ];
 
 export default function GuideSection({

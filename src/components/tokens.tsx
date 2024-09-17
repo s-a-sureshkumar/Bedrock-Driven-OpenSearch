@@ -6,12 +6,16 @@ import { Schema } from "~/amplify/data/resource";
 export default function Tokens({
   tokens,
 }: {
-  tokens: Schema["Token"]["type"][];
+  tokens: (Schema["TokenResult"]["type"] | undefined | null)[] | null;
 }) {
+  const filteredTokens = tokens?.filter(
+    (token) => token !== null,
+  ) as Schema["TokenResult"]["type"][];
+
   return (
     <>
       <ul className="mt-4">
-        {tokens?.map((token, index) => (
+        {filteredTokens?.map((token, index) => (
           <li key={`${token.collection_slug}-${token.identifier}`}>
             <Divider soft={index > 0} />
             <div className="flex items-center justify-between">

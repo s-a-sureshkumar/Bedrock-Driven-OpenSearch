@@ -1,9 +1,9 @@
-// collections/SearchSection.tsx
 import React, { ReactElement } from "react";
 import { Input, InputGroup } from "@/components/input";
 import { Button } from "@/components/button";
 import { BadgeButton } from "@/components/badge";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
+import CollapsibleCodeBlock from "@/components/collapsible-code-block";
 
 export default function SearchSection({
   searchInput,
@@ -12,6 +12,7 @@ export default function SearchSection({
   isSearching,
   showGuide,
   setShowGuide,
+  searchQuery,
 }: {
   searchInput: string;
   setSearchInput: React.Dispatch<React.SetStateAction<string>>;
@@ -19,6 +20,7 @@ export default function SearchSection({
   isSearching: boolean;
   showGuide: boolean;
   setShowGuide: React.Dispatch<React.SetStateAction<boolean>>;
+  searchQuery?: [];
 }): ReactElement {
   return (
     <div className="flex flex-wrap items-end justify-between gap-4 mt-6">
@@ -40,6 +42,12 @@ export default function SearchSection({
             {isSearching ? "Searching..." : "Search"}
           </Button>
         </div>
+
+        <CollapsibleCodeBlock
+          code={JSON.stringify(searchQuery, null, 2)}
+          language="json"
+        />
+
         <div className="mt-2">
           <BadgeButton
             color={showGuide ? "orange" : "zinc"}

@@ -1,6 +1,5 @@
-// collections/Collections.tsx
 "use client";
-import React, { ReactElement, useState, useCallback, useEffect } from "react";
+import React, { ReactElement, useCallback, useEffect, useState } from "react";
 import { Heading } from "@/components/heading";
 import { useAuth } from "@/contexts/auth-context";
 import { useListCollections } from "@/hooks/use-list-collections";
@@ -14,14 +13,20 @@ import SearchResults from "@/components/search-results";
 import { useSearchTokens } from "@/hooks/use-search-tokens";
 import { Text } from "@/components/text";
 
-export default function Collections(): ReactElement {
+export default function Home(): ReactElement {
   const { auth } = useAuth();
   const { data: collections, isPending: isListCollectionsPending } =
     useListCollections();
   const [showGuide, setShowGuide] = useState<boolean>(true);
   const [query, setQuery] = useState<string>("");
   const [searchInput, setSearchInput] = useState<string>("");
-  const { data: searchTokens, isLoading: isSearching } = useSearchTokens(query);
+  const {
+    data: { tokens: searchTokens = [], query: searchQuery } = {
+      tokens: [],
+    },
+    isLoading: isSearching,
+  } = useSearchTokens(query);
+
   const {
     data: { count: totalTokenCount } = { count: 0 },
     isPending: isTotalTokenCountPending,
@@ -38,7 +43,7 @@ export default function Collections(): ReactElement {
       totalTokenCount < totalTokensInSeedData
     ) {
       const interval = setInterval(() => {
-        refetchTotalTokenCount();
+        refetchTotalTokenCount().then(() => {});
       }, 5000);
 
       return () => clearInterval(interval);
@@ -95,7 +100,9 @@ export default function Collections(): ReactElement {
         isSearching={isSearching}
         showGuide={showGuide}
         setShowGuide={setShowGuide}
+        searchQuery={searchQuery as []}
       />
+
       {showGuide && (
         <GuideSection
           setSearchInput={setSearchInput}
