@@ -1,5 +1,5 @@
 
-# AWS Bedrock (Claude) OpenSearch Query Generator
+# Amazon Bedrock (Claude) OpenSearch Query Generator
 
 This project demonstrates the use of AWS Bedrock (Claude) to process user prompts/intents and generate OpenSearch queries. It's built using AWS Amplify Gen 2 and NextJS.
 
